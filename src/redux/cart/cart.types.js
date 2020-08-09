@@ -1,3 +1,6 @@
-export const ToggleCart = {
-    TOGGLE_CART : 'TOGGLE_CART'
+const CartActionTypes = {
+    TOGGLE_CART : 'TOGGLE_CART',
+    ADD_ITEM : 'ADD_ITEM'
 }
+
+export default CartActionTypes;
