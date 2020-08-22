@@ -27,12 +27,8 @@ class App extends React.Component {
           });
         })
       }
-      else{
-        this.props.setCurrentUser({
-          userAuth
-        })
-      }
-    })
+      this.props.setCurrentUser(userAuth);
+    });
   }
 
   componentWillUnmount(){
@@ -61,16 +57,16 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => (
+  {
     currentUser: selectCurrentUser(state)
   }
-}
+);
 
-const mapDispatchToProps = (dispatch) => {
-  return {
+const mapDispatchToProps = (dispatch) => (
+  {
     setCurrentUser: user => dispatch(setCurrentUser(user))
   }
-}
+)
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

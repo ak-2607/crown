@@ -13,6 +13,8 @@ const config = {
     measurementId: "G-828EZGEQPS"
   };
 
+  firebase.initializeApp(config);
+
   export const createUserProfileDocument = async(userAuth, additionalData) => {
     if (!userAuth) {
       return;
@@ -28,7 +30,7 @@ const config = {
           email,
           createdAt,
           ...additionalData
-        })
+        });
       } 
       catch(err){
         console.log(err);
@@ -37,7 +39,7 @@ const config = {
     return userRef;
   }
 
-  firebase.initializeApp(config);
+  
 
   export const auth = firebase.auth();
   export const firestore = firebase.firestore();

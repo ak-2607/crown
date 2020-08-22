@@ -40,11 +40,11 @@ const Header = ({currentUser, toggleCart}) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
+const mapStateToProps = (state) => (
+    {
         currentUser: selectCurrentUser(state),
         toggleCart: selectCartHidden(state)
     }
-}
+)
 
 export default connect(mapStateToProps)(Header);
